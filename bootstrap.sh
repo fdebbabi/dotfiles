@@ -6,7 +6,7 @@
 
 WORKSPACE=$HOME/Workspace
 DOTFILES=$WORKSPACE/Git-Repos/dotfiles
-DOTS=$DOTFILES/configuration-files
+DOTS=$DOTFILES/dots
 
 
 mkdir -p $WORKSPACE/{Git-Repos,Youtube,Other}
@@ -30,7 +30,9 @@ install() {
 
 
 # install sl bat chafa cmus exa git htop jq neovim python tmux tree xclip yq
-
+# Here I use apt package manager as it changes the valid shells in /etc/shells automatically
+# sudo apt install zsh
+# Install oh-my-zsh
 
 
 ############### Configuration section
@@ -79,6 +81,6 @@ function make-link
 # 3. Create symlinks for the different configuration files in the good folders (Try to respect XDG Base Directory specification when possible)
 # Testing with a single conf for now (neovim)
 make-link $DOTS/init.vim ~/.config/nvim/init.vim
-
+ln -s $DOTS/zshrc ~/.zshrc
 
 # 4. Not sure for now, but need to setup also vim plugins(like Cellular-automaton) and stuff (probably should feasable using the CLI)
