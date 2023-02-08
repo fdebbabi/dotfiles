@@ -21,8 +21,13 @@ install() {
   echo "Done Installing packages."
 }
 
-install sl bat chafa cmus exa git htop jq neovim python tmux tree xclip yq zsh oh-my-zsh
-sudo -u root bash -c "echo $(which zsh) >> /etc/shells"
+install sl bat chafa cmus exa git htop jq neovim python ranger tmux tree xclip yq zsh oh-my-zsh
+
+if ! grep ".nix-profile/bin/zsh" /etc/shells 
+then
+	echo "Adding '$(which zsh)' to /etc/shells to be considered as a valid login shell..."
+    sudo -u root bash -c "echo $(which zsh) >> /etc/shells"
+fi
 
 
 ###################  CONFIGURATION SECTION 
@@ -33,11 +38,12 @@ else
     git pull $GIT_URL
 fi
 
-ln -f -s $DOTS/init.vim ~/.config/nvim/init.vim
-ln -f -s $DOTS/tmux.conf ~/.config/tmux/tmux.conf
-ln -f -s $DOTS/zshrc ~/.zshrc
-ln -f -s $(nix profile list |grep "oh-my-zsh"  | awk '{print $4 "/share/oh-my-zsh"}') ~/.oh-my-zsh
+ln -f -s -n $DOTS/init.vim ~/.config/nvim/init.vim
+ln -f -s -n $DOTS/tmux.conf ~/.config/tmux/tmux.conf
+ln -f -s -n $DOTS/zshrc ~/.zshrc
+ln -f -s -n $(nix profile list |grep "oh-my-zsh"  | awk '{print $4 "/share/oh-my-zsh"}') ~/.oh-my-zsh
 
+echo "Updating login shell to ZSH..."
 chsh -s $(which zsh)
 
 # 3. Not sure for now, but need to setup also vim plugins(like Cellular-automaton) and stuff (probably should feasable using the CLI)
