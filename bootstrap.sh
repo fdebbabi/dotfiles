@@ -21,7 +21,7 @@ install() {
   echo "Done Installing packages."
 }
 
-install sl bat chafa cmus exa git htop jq neovim python ranger tmux tree xclip yq zsh oh-my-zsh
+#install sl bat chafa cmus exa git htop jq neovim python ranger tmux tree xclip yq zsh oh-my-zsh
 
 if ! grep ".nix-profile/bin/zsh" /etc/shells 
 then
