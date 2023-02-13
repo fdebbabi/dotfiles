@@ -21,7 +21,7 @@ install() {
   echo "Done Installing packages."
 }
 
-# install sl bat chafa cmus exa git htop jq neovim python3 ranger tmux tree xclip yq oh-my-zsh
+# install sl bat chafa cmus exa git htop jq neovim python3 ranger tmux tree xclip yq oh-my-zsh asciiquarium
 install_oh_my_posh() {
 	sudo wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64 -O /usr/local/bin/oh-my-posh
 	sudo chmod +x /usr/local/bin/oh-my-posh
