@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# This script requires nix package manager installed and zsh shell available
+
 ################### INITIALIZATION SECTION
 GIT_URL=git@github.com:fdebbabi/dotfiles.git
 WORKSPACE=$HOME/Workspace
@@ -29,13 +31,6 @@ install_oh_my_posh() {
 
 # install_oh_my_posh
 
-# if ! grep ".nix-profile/bin/zsh" /etc/shells 
-# then
-# 	echo "Adding '$(which zsh)' to /etc/shells to be considered as a valid login shell..."
-#     sudo -u root bash -c "echo $(which zsh) >> /etc/shells"
-# fi
-
-
 ###################  CONFIGURATION SECTION 
 if [ ! -d "$DOTFILES" ] ; then
     git clone $GIT_URL $FOLDER
@@ -57,3 +52,4 @@ echo "Updating login shell to ZSH..."
 chsh -s $(which zsh)
 
 # 3. Not sure for now, but need to setup also vim plugins(like Cellular-automaton) and stuff (probably should feasable using the CLI)
+# Need to install Plug plugin manager, cellular-automaton and treesitter plugins with Python parser
