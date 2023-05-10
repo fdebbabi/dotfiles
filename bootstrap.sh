@@ -24,14 +24,8 @@ install() {
 }
 
 # install sl bat chafa cmus exa htop jq neovim python3 ranger tmux tree xclip yq oh-my-zsh asciiquarium
-install_oh_my_posh() {
-	echo "Installing OhMyPosh..."
-	sudo wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64 -O /usr/local/bin/oh-my-posh
-	sudo chmod +x /usr/local/bin/oh-my-posh
-	echo "Done Installing OhMyPosh"
-}
 
-# install_oh_my_posh
+# install_oh_my_zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"  --keep-zshrc
 
 ###################  CONFIGURATION SECTION 
@@ -46,9 +40,7 @@ fi
 ln -f -s -n $DOTS/init.vim ~/.config/nvim/init.vim
 ln -f -s -n $DOTS/tmux.conf ~/.config/tmux/tmux.conf
 ln -f -s -n $DOTS/"Meslo LG L DZ Bold Nerd Font Complete.ttf" ~/.fonts/"Meslo LG L DZ Bold Nerd Font Complete.ttf"
-ln -f -s -n $DOTS/fayez-theme.omp.json ~/.config/oh-my-posh/fayez-theme.omp.json
 ln -f -s -n $DOTS/zshrc ~/.zshrc
-ln -f -s -n $DOTS/hyper.js ~/.hyper.js
 
 echo "Building font information caches..."
 # fc-cache -f 
