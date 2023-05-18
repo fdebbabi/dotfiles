@@ -23,7 +23,7 @@ install() {
   echo "Done Installing packages."
 }
 
-# install sl bat chafa cmus exa htop jq neovim python3 ranger tmux tree xclip yq oh-my-zsh asciiquarium
+# install sl bat chafa cmus exa htop jq neovim python3 ranger tmux tree xclip yq asciiquarium
 
 # install_oh_my_zsh
 rm -f ~/.zshrc
