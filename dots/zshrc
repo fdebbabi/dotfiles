@@ -65,7 +65,7 @@ source $ZSH/oh-my-zsh.sh
 # fi
 
 # Custom configuration
-alias l='exa -l --header --no-time --group-directories-first'
-alias ll='exa -la --header --no-time --group-directories-first'
-alias lll='exa -la --header --group-directories-first'
+alias l='eza -l --header --no-time --group-directories-first'
+alias ll='eza -la --header --no-time --group-directories-first'
+alias lll='eza -la --header --group-directories-first'
 alias cat='bat'
