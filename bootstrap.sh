@@ -1,5 +1,5 @@
 #!/usr/bin/zsh
-
+# TODO: THIS SCRIPT NEEDS TO BE FIXED
 # This script requires nix package manager installed with flakes enabled and zsh shell available
 
 ################### INITIALIZATION SECTION
