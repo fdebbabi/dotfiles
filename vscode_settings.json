@@ -1,0 +1,95 @@
+{
+  "editor.mouseWheelZoom": true,
+  "git.enabled": true,
+  "explorer.autoReveal": false,
+  "editor.autoClosingBrackets": "always",
+  "editor.minimap.enabled": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.guides.bracketPairsHorizontal": false,
+  "workbench.startupEditor": "none",
+  "editor.wordWrap": "on",
+  "redhat.telemetry.enabled": false,
+  "update.mode": "none",
+  "extensions.autoCheckUpdates": false,
+  "terminal.integrated.fontSize": 16,
+  "http.proxySupport": "on",
+  "http.proxyStrictSSL": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "editor.inlineSuggest.enabled": true,
+  "window.zoomLevel": 1,
+  "[python]": {
+      "diffEditor.ignoreTrimWhitespace": false
+  },
+  "codesnap.transparentBackground": true,
+  "codesnap.target": "window",
+  "python.analysis.diagnosticSeverityOverrides": {},
+
+  "editor.fontWeight": "bold",
+  "workbench.colorTheme": "Bluloco Dark Italic",
+  "editor.tokenColorCustomizations": {
+      "[Bluloco Dark Italic]": {
+          "textMateRules": [
+              {
+                  "scope": "variable",
+                  "settings": {
+                      "foreground": "#ff18cd"
+                  }
+              },
+              {
+                  "scope": "entity.name.namespace",
+                  "settings": {
+                      "foreground": "#f353f3",
+                      "fontStyle": "bold"
+                  }
+              },
+              {
+                  "scope": "entity.name.function",
+                  "settings": {
+                      "foreground": "#59ef27",
+                      "fontStyle": "bold"
+                  }
+              },
+              {
+                  "scope": "support.function.magic.python",
+                  "settings": {
+                      "foreground": "#59ef27",
+                      "fontStyle": "bold"
+                  }
+              },
+              {
+                  "scope": "keyword.control",
+                  "settings": {
+                      "foreground": "#11b4ff",
+                      "fontStyle": "bold"
+                  }
+              },
+              {
+                  "scope": "constant.numeric.dec.python",
+                  "settings": {
+                      "foreground": "#f5a510",
+                      "fontStyle": "bold"
+                  }
+              }
+          ]
+      }
+  },
+  "yaml.schemas": {
+      "kubernetes": "playground/*.yaml"
+  },
+  "editor.tabSize": 2,
+  "files.exclude": {
+      "**/.DS_Store": false,
+      "**/.git": false,
+      "**/.hg": false,
+      "**/.svn": false,
+      "**/CVS": false,
+      "**/Thumbs.db": false
+  },
+  "indentRainbow.lightIndicatorStyleLineWidth": 2,
+  "csv-preview.separator": ";",
+  "markdown-preview-enhanced.automaticallyShowPreviewOfMarkdownBeingEdited": true,
+  "workbench.colorCustomizations": {
+      "scrollbarSlider.background": "#9d9797"
+  },
+  "git.openRepositoryInParentFolders": "always"
+}
