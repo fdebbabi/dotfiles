@@ -1,0 +1,15 @@
+# Claude Code state and cache — only settings/config should be tracked
+projects/
+sessions/
+todos/
+shell-snapshots/
+session-env/
+statsig/
+telemetry/
+file-history/
+debug/
+backups/
+plans/
+ide/
+*-cache.json
+*.log

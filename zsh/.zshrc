@@ -13,4 +13,7 @@ alias l='eza -l --header --no-time --group-directories-first'
 alias ll='eza -la --header --no-time --group-directories-first'
 alias lll='eza -la --header --group-directories-first'
 alias cat='bat'
-alias python='python3'
+
+
+export PATH="/Users/fdebbabi/Workspace/InfraPlayground/binaries:$PATH"
+export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools
