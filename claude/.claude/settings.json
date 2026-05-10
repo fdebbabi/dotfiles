@@ -12,11 +12,9 @@
       "Read(**/credentials*)",
       "Read(**/*.pem)",
       "Read(**/*.key)",
-
       "Bash(* | sh)",
       "Bash(* | bash)",
       "Bash(* | zsh)",
-
       "Bash(rm -rf /*)",
       "Bash(rm -rf ~/*)",
       "Bash(rm -rf $HOME*)",
@@ -24,9 +22,9 @@
       "Bash(git push -f *)"
     ],
     "allow": [
+      "Read(~/.claude/**)",
       "Bash(flutter *)",
       "Bash(dart *)",
-
       "Bash(ls *)",
       "Bash(ls * | head *)",
       "Bash(cat *)",
@@ -42,7 +40,6 @@
       "Bash(jq *)",
       "Bash(find * -type f)",
       "Bash(find * -name *)",
-
       "Bash(git status)",
       "Bash(git status *)",
       "Bash(git diff *)",
@@ -51,22 +48,18 @@
       "Bash(git branch *)",
       "Bash(git remote *)",
       "Bash(git stash list)",
-
       "Bash(gh pr view *)",
       "Bash(gh pr list *)",
       "Bash(gh issue view *)",
       "Bash(gh issue list *)",
       "Bash(gh run view *)",
       "Bash(gh repo view *)",
-
       "Bash(brew list *)",
       "Bash(brew info *)",
       "Bash(brew search *)",
       "Bash(brew --version)",
-
       "Bash(stow --help)",
       "Bash(stow -n *)",
-
       "WebSearch",
       "WebFetch"
     ]
@@ -78,5 +71,6 @@
   "statusLine": {
     "type": "command",
     "command": "echo \"${PWD##*/} | $(git branch --show-current 2>/dev/null || echo no-branch)\""
-  }
+  },
+  "model": "haiku"
 }

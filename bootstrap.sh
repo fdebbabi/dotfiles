@@ -54,6 +54,22 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
 fi
 
 
+################### CLAUDE CODE CLI
+
+if ! command -v claude >/dev/null 2>&1; then
+  echo "==> Installing Claude Code CLI..."
+  curl -fsSL https://claude.ai/install.sh | bash
+fi
+
+
+################### OPENCODE CLI
+
+if ! command -v opencode >/dev/null 2>&1; then
+  echo "==> Installing opencode CLI..."
+  curl -fsSL https://opencode.ai/install | bash
+fi
+
+
 ################### STOW DOTFILES
 
 PACKAGES=(zsh git tmux karabiner vim claude pgcli flameshot)
