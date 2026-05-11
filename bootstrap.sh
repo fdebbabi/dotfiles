@@ -11,7 +11,7 @@ set -euo pipefail
 
 GIT_URL=https://github.com/fdebbabi/dotfiles.git
 WORKSPACE=$HOME/Workspace
-DOTFILES=$WORKSPACE/dotfiles
+DOTFILES=$WORKSPACE/Git-Repos/dotfiles
 
 mkdir -p "$WORKSPACE"/{Git-Repos,Youtube,Other}
 mkdir -p "$HOME"/.config "$HOME"/.claude
@@ -28,11 +28,36 @@ else
 fi
 cd "$DOTFILES"
 
+################### HOMEBREW macos package manager
+
+if ! command -v brew >/dev/null 2>&1; then
+  echo "==> Installing Homebrew..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  # Add Homebrew to PATH (M1/M2/M3/M4 Macs)
+  eval "$(/opt/homebrew/bin/brew shellenv)" # Necessary for subsequent calls to be aware of brew
+fi
+
+################### INSTALL STOW FIRST
+
+echo "==> Installing stow..."
+brew install stow
+
+
+################### STOW DOTFILES
+
+# Clean up any auto-generated dotfiles that conflict
+rm -f "$HOME/.zprofile" "$HOME/.zshrc"
+
+PACKAGES=(zsh git tmux karabiner vim claude pgcli flameshot)
+
+echo "==> Stowing: ${PACKAGES[*]}"
+stow --restow -t "$HOME" "${PACKAGES[@]}"
+
 
 ################### PACKAGES
 
 FORMULAE=(
-  stow eza bat chafa cmus htop jq neovim ranger tmux tree yq pgcli gh fzf
+  stow eza bat chafa cmus htop jq neovim ranger tmux tree yq pgcli gh fzf node
 )
 CASKS=(
   karabiner-elements
@@ -54,6 +79,19 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
 fi
 
 
+################### DEFAULT SHELL
+
+if [[ "$SHELL" != *zsh* ]]; then
+  echo "==> Setting default shell to zsh..."
+  chsh -s "$(command -v zsh)"
+fi
+
+
+echo "==> Done."
+
+# Switch to zsh in current terminal
+exec zsh -l
+
 ################### CLAUDE CODE CLI
 
 if ! command -v claude >/dev/null 2>&1; then
@@ -69,20 +107,5 @@ if ! command -v opencode >/dev/null 2>&1; then
   curl -fsSL https://opencode.ai/install | bash
 fi
 
-
-################### STOW DOTFILES
-
-PACKAGES=(zsh git tmux karabiner vim claude pgcli flameshot)
-
-echo "==> Stowing: ${PACKAGES[*]}"
-stow --restow -t "$HOME" "${PACKAGES[@]}"
-
-
-################### DEFAULT SHELL
-
-if [[ "$SHELL" != *zsh* ]]; then
-  echo "==> Setting default shell to zsh..."
-  chsh -s "$(command -v zsh)"
-fi
 
 echo "==> Done."
