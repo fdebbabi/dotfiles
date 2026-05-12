@@ -5,6 +5,37 @@
             "complex_modifications": {
                 "rules": [
                     {
+                        "description": "Remap option+shift+t and option+shift+; for VSCode",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "t",
+                                    "modifiers": { "mandatory": ["left_shift", "left_option"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "t",
+                                        "modifiers": ["left_shift", "left_command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "semicolon",
+                                    "modifiers": { "mandatory": ["left_shift", "left_option"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "l",
+                                        "modifiers": ["left_shift", "left_command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Delete word back",
                         "manipulators": [
                             {

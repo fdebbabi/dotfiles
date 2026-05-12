@@ -64,13 +64,14 @@
       "WebFetch"
     ]
   },
-  "preferences": {
-    "codeStyle": "Do not add Co-Authored-By lines to commit messages"
-  },
-  "effortLevel": "xhigh",
+  "model": "haiku",
   "statusLine": {
     "type": "command",
     "command": "echo \"${PWD##*/} | $(git branch --show-current 2>/dev/null || echo no-branch)\""
   },
-  "model": "haiku"
+  "effortLevel": "xhigh",
+  "theme": "auto",
+  "preferences": {
+    "codeStyle": "Do not add Co-Authored-By lines to commit messages"
+  }
 }
