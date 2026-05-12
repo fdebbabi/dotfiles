@@ -61,6 +61,7 @@ FORMULAE=(
 )
 CASKS=(
   karabiner-elements
+  kitty
 )
 
 echo "==> Installing brew formulae..."
