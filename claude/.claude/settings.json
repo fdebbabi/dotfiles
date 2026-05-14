@@ -1,28 +1,7 @@
 {
   "permissions": {
-    "deny": [
-      "Read(~/.ssh/**)",
-      "Read(~/.aws/**)",
-      "Read(~/.kube/**)",
-      "Read(~/.config/argocd/**)",
-      "Read(.env)",
-      "Read(.env.*)",
-      "Read(**/.env)",
-      "Read(**/.env.*)",
-      "Read(**/credentials*)",
-      "Read(**/*.pem)",
-      "Read(**/*.key)",
-      "Bash(* | sh)",
-      "Bash(* | bash)",
-      "Bash(* | zsh)",
-      "Bash(rm -rf /*)",
-      "Bash(rm -rf ~/*)",
-      "Bash(rm -rf $HOME*)",
-      "Bash(git push --force *)",
-      "Bash(git push -f *)"
-    ],
     "allow": [
-      "Read(~/.claude/**)",
+      "Read($HOME/.claude/**)",
       "Bash(flutter *)",
       "Bash(dart *)",
       "Bash(ls *)",
@@ -62,6 +41,27 @@
       "Bash(stow -n *)",
       "WebSearch",
       "WebFetch"
+    ],
+    "deny": [
+      "Read(~/.ssh/**)",
+      "Read(~/.aws/**)",
+      "Read(~/.kube/**)",
+      "Read(~/.config/argocd/**)",
+      "Read(.env)",
+      "Read(.env.*)",
+      "Read(**/.env)",
+      "Read(**/.env.*)",
+      "Read(**/credentials*)",
+      "Read(**/*.pem)",
+      "Read(**/*.key)",
+      "Bash(* | sh)",
+      "Bash(* | bash)",
+      "Bash(* | zsh)",
+      "Bash(rm -rf /*)",
+      "Bash(rm -rf ~/*)",
+      "Bash(rm -rf $HOME*)",
+      "Bash(git push --force *)",
+      "Bash(git push -f *)"
     ]
   },
   "model": "haiku",
@@ -73,5 +73,10 @@
   "theme": "auto",
   "preferences": {
     "codeStyle": "Do not add Co-Authored-By lines to commit messages"
-  }
+  },
+  "disabledMcpjsonServers": [
+    "claude_ai_Gmail",
+    "claude_ai_Google_Calendar",
+    "claude_ai_Google_Drive"
+  ]
 }

@@ -37,6 +37,11 @@ if ! command -v brew >/dev/null 2>&1; then
   eval "$(/opt/homebrew/bin/brew shellenv)" # Necessary for subsequent calls to be aware of brew
 fi
 
+################### UPDATE OUTDATED PACKAGES
+
+echo "==> Updating outdated formulae..."
+brew upgrade
+
 ################### INSTALL STOW FIRST
 
 echo "==> Installing stow..."
@@ -60,8 +65,20 @@ FORMULAE=(
   stow eza bat chafa cmus htop jq neovim ranger tmux tree yq pgcli gh fzf node
 )
 CASKS=(
+  scroll-reverser
   karabiner-elements
+  rectangle
   kitty
+  google-chrome
+  visual-studio-code
+  orbstack
+  postman
+  drawio
+  bitwarden
+  veracrypt
+  lunar
+  screenflick
+  microsoft-powerpoint
 )
 
 echo "==> Installing brew formulae..."
