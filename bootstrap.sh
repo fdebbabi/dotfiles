@@ -68,6 +68,7 @@ CASKS=(
   scroll-reverser
   karabiner-elements
   rectangle
+  maccy
   kitty
   google-chrome
   visual-studio-code
