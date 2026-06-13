@@ -62,7 +62,7 @@ stow --restow -t "$HOME" "${PACKAGES[@]}"
 ################### PACKAGES
 
 FORMULAE=(
-  stow eza bat chafa cmus htop jq neovim ranger tmux tree yq pgcli gh fzf node
+  stow eza bat chafa cmus htop jq neovim ranger tmux tree yq pgcli gh fzf node flutter ripgrep
 )
 CASKS=(
   scroll-reverser
@@ -80,6 +80,7 @@ CASKS=(
   lunar
   screenflick
   microsoft-powerpoint
+  android-platform-tools
 )
 
 echo "==> Installing brew formulae..."
@@ -87,6 +88,31 @@ brew install "${FORMULAE[@]}"
 
 echo "==> Installing brew casks..."
 brew install --cask "${CASKS[@]}"
+
+
+# ################### XCODE
+
+# if ! xcodebuild -version >/dev/null 2>&1; then
+#   echo "==> Installing Xcode from App Store..."
+#   open "macappstore://apps.apple.com/app/xcode/id497799835"
+#   echo "Please install Xcode from the App Store and run the script again."
+#   exit 0
+# fi
+
+# echo "==> Accepting Xcode license..."
+# sudo xcode-select --switch /Applications/Xcode.app/xcode-select
+# sudo xcodebuild -runFirstLaunch
+
+
+################### FLUTTER SDK
+
+if command -v flutter >/dev/null 2>&1; then
+  echo "==> Checking Flutter installation..."
+  flutter doctor
+  echo "==> Disabling analytics..."
+  dart --disable-analytics
+  flutter config --no-analytics
+fi
 
 
 ################### OH-MY-ZSH

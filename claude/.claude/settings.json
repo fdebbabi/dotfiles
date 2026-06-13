@@ -65,6 +65,11 @@
     ]
   },
   "model": "haiku",
+  "disabledMcpjsonServers": [
+    "claude_ai_Gmail",
+    "claude_ai_Google_Calendar",
+    "claude_ai_Google_Drive"
+  ],
   "statusLine": {
     "type": "command",
     "command": "echo \"${PWD##*/} | $(git branch --show-current 2>/dev/null || echo no-branch)\""
@@ -73,10 +78,5 @@
   "theme": "auto",
   "preferences": {
     "codeStyle": "Do not add Co-Authored-By lines to commit messages"
-  },
-  "disabledMcpjsonServers": [
-    "claude_ai_Gmail",
-    "claude_ai_Google_Calendar",
-    "claude_ai_Google_Drive"
-  ]
+  }
 }
